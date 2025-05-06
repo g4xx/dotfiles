@@ -1,0 +1,21 @@
+plugins=(
+	git
+	sudo
+	web-search
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+	fast-syntax-highlighting
+	copyfile
+	copybuffer
+	dirhistory
+)
+
+source $ZSH/oh-my-zsh.sh
+source <(fzf --zsh)
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
+eval "$(oh-my-posh init zsh --config $HOME/.cache/oh-my-posh/themes/catppuccin_frappe.omp.json)"

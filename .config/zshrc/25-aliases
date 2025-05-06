@@ -1,0 +1,4 @@
+alias vim='$EDITOR'
+alias v='$EDITOR'
+alias vi='$EDITOR'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

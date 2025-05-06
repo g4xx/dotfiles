@@ -1,0 +1,8 @@
+if [[ $(tty) == *"pts"* ]]; then
+    fastfetch --config examples/13
+else
+    echo
+    if [ -f /bin/hyprctl ]; then
+        echo "Start Sway with command Sway (not sure if this is true xD)"
+    fi
+fi
