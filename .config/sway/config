@@ -1,5 +1,5 @@
 # Windows key as Mod Key
-#include colors.conf
+include colors.conf
 
 set $mod Mod4
 
@@ -180,10 +180,10 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-client.focused              #A9FFFD #003232 #FFFFFF #72D6D5 #A9FFFD
-client.focused_inactive     #4D444B #362E35 #FFFFFF #D0BDCC #4D444B
-client.unfocused            #251D24 #181117 #FFFFFF #534551 #251D24
-client.urgent               #FFAEA4 #98000A #000000 #FFECE9 #FFAEA4
-client.placeholder          #251D24 #181117 #FFFFFF #534551 #251D24
+#client.focused              #A9FFFD #003232 #FFFFFF #72D6D5 #A9FFFD
+#client.focused_inactive     #4D444B #362E35 #FFFFFF #D0BDCC #4D444B
+#client.unfocused            #251D24 #181117 #FFFFFF #534551 #251D24
+#client.urgent               #FFAEA4 #98000A #000000 #FFECE9 #FFAEA4
+#client.placeholder          #251D24 #181117 #FFFFFF #534551 #251D24
 
 include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
