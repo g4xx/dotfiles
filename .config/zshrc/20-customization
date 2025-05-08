@@ -18,4 +18,5 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
-eval "$(oh-my-posh init zsh --config $HOME/.cache/oh-my-posh/themes/catppuccin_frappe.omp.json)"
+eval "$(starship init zsh)"
+#eval "$(oh-my-posh init zsh --config $HOME/.cache/oh-my-posh/themes/catppuccin_mocha.omp.json)"

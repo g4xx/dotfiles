@@ -1,0 +1,11 @@
+[general]
+import = ["colors.toml"]
+
+[font]
+size = 16.0
+
+[font.normal]
+family = "JetBrainsMono NF"
+
+[window]
+opacity = 0.9

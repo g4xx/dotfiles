@@ -1,4 +1,6 @@
 # Windows key as Mod Key
+#include colors.conf
+
 set $mod Mod4
 
 # Home row direction keys, like vim
@@ -7,7 +9,7 @@ set $down j
 set $up k
 set $right l
 
-set $term foot
+set $term alacritty
 set $rofi_cmd rofi \
         -terminal '$term'
 set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
@@ -151,14 +153,16 @@ for_window {
 	[class="Helix P4V"] move to workspace 8
 }
 
-# Gaps
+# Gaps and Borders
 default_border pixel 4
-smart_borders off
+smart_borders on
 smart_gaps off
 gaps {
-	inner 0
-	outer 0
+	inner 4
+	outer 4
 }
+
+mouse_warping container
 
 mode "resize" {
     bindsym $left resize shrink width 10px
@@ -175,5 +179,11 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+client.focused              #A9FFFD #003232 #FFFFFF #72D6D5 #A9FFFD
+client.focused_inactive     #4D444B #362E35 #FFFFFF #D0BDCC #4D444B
+client.unfocused            #251D24 #181117 #FFFFFF #534551 #251D24
+client.urgent               #FFAEA4 #98000A #000000 #FFECE9 #FFAEA4
+client.placeholder          #251D24 #181117 #FFFFFF #534551 #251D24
 
 include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'

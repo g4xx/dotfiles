@@ -1,6 +1,3 @@
-
-
-
 # Fetch configuration from config dir
 
 for f in ~/.config/zshrc/*; do
