@@ -1,0 +1,3 @@
+[submodule "/home/gaxx/.config/nvim"]
+	path = /home/gaxx/.config/nvim
+	url = git@github.com:g4xx/kickstart.nvim.git
