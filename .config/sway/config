@@ -16,7 +16,7 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 set $browser firefox
 
 # Outputs
-output * bg /home/gaxx/.config/wallpaper/wallpaper.jpg fill
+output * bg /home/gaxx/.config/wallpaper/black_hole.jpg fill
 
 set $laptop eDP-1
 set $hdmi HDMI-A-1
@@ -35,6 +35,7 @@ workspace {
 	7 output $hdmi $laptop
 	8 output $laptop
 	9 output $laptop
+	0 output $laptop
 }
 
 # Inputs
@@ -151,6 +152,9 @@ for_window {
 	[class="Slack"] move to workspace 9
 	[class="discord"] move to workspace 9
 	[class="Helix P4V"] move to workspace 8
+	[app_id="nvidia-settings"] floating enable
+	[title="^Friends List$"] floating enable
+	[class="steam"] move to workspace 0
 }
 
 # Gaps and Borders
