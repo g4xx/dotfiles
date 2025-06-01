@@ -16,7 +16,7 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 set $browser firefox
 
 # Outputs
-output * bg /home/gaxx/.config/wallpaper/black_hole.jpg fill
+output * bg /home/gaxx/.config/wallpaper/wallpaper.jpg fill
 
 set $laptop eDP-1
 set $hdmi HDMI-A-1
@@ -24,7 +24,7 @@ set $hdmi HDMI-A-1
 output $hdmi resolution 2560x1440@69.928Hz pos 0 0
 output $laptop resolution 1920x1080@120Hz pos 320 1440
 
-workspace_auto_back_and_forth yes
+workspace_auto_back_and_forth no
 workspace {
 	1 output $hdmi $laptop
 	2 output $hdmi $laptop
@@ -166,7 +166,7 @@ gaps {
 	outer 4
 }
 
-mouse_warping container
+mouse_warping output
 
 mode "resize" {
     bindsym $left resize shrink width 10px
