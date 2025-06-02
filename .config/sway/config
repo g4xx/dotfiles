@@ -151,6 +151,8 @@ input type:keyboard {
     bindsym $mod+minus scratchpad show
 
 for_window {
+	[app_id="blueman-manager"] floating enable
+	[app_id="nm-connection-editor"] floating enable
 	[app_id="org.mozilla.firefox" title="^Picture-in-Picture$"] floating enable, move position center, sticky enable, resize set width 640, resize set height 360
 	[class="Slack"] move to workspace 9
 	[class="discord"] move to workspace 9
