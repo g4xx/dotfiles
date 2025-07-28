@@ -2,14 +2,14 @@
 
 * {
   font-family: JetBrainsMono NF;
-  font-size: 16px;
+  font-size: 14px;
   min-height: 0;
 }
 
 #waybar {
   background: transparent;
   color: @text;
-  margin: 5px 5px;
+  margin: 0px 0px;
 }
 
 #workspaces {
@@ -22,7 +22,7 @@
 #workspaces button {
   color: @lavender;
   border-radius: 1rem;
-  padding: 0.4rem;
+  padding: 0.25rem;
 }
 
 #workspaces button.visible {
@@ -44,7 +44,7 @@
 #custom-lock,
 #custom-power {
   background-color: @surface0;
-  padding: 0.5rem 1rem;
+  padding: 0.0rem 0.5rem;
   margin: 5px 0;
 }
 
