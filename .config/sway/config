@@ -9,6 +9,7 @@ set $down j
 set $up k
 set $right l
 
+set $file_browser thunar
 set $term alacritty
 set $rofi_cmd rofi \
         -terminal '$term'
@@ -71,6 +72,7 @@ input type:keyboard {
     
     bindsym $mod+c exec $browser
 
+    bindsym $mod+q exec $file_browser
     bindsym $mod+Alt+s exec ~/.local/bin/screenshot
     floating_modifier $mod normal
 
@@ -132,9 +134,9 @@ input type:keyboard {
     bindsym $mod+b splith
     bindsym $mod+v splitv
 
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+#   bindsym $mod+s layout stacking
+#   bindsym $mod+w layout tabbed
+#   bindsym $mod+e layout toggle split
 
     bindsym $mod+f fullscreen
 
@@ -173,8 +175,8 @@ default_border pixel 4
 smart_borders on
 smart_gaps off
 gaps {
-	inner 4
-	outer 4
+	inner 0
+	outer 0
 }
 
 mouse_warping output
