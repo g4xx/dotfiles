@@ -42,6 +42,7 @@
 #battery,
 #pulseaudio,
 #custom-lock,
+#custom-gfx,
 #custom-power {
   background-color: @surface0;
   padding: 0.0rem 0.5rem;
@@ -94,6 +95,10 @@
     margin-right: 1rem;
     border-radius: 0px 1rem 1rem 0px;
     color: @red;
+}
+
+#custom-gfx {
+    color: @white;
 }
 
 #tray {

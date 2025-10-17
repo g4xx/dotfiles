@@ -25,7 +25,8 @@ set $hdmi HDMI-A-1
 output $hdmi resolution 2560x1440@69.928Hz pos 0 0
 output $laptop resolution 1920x1080@120Hz pos 320 1440
 
-output $laptop scale 1.25
+output $laptop scale 1
+output $hdmi scale 1.5
 
 workspace_auto_back_and_forth no
 workspace {
@@ -69,17 +70,24 @@ input type:keyboard {
 
     # Start your launcher
     bindsym $mod+d exec $menu
-    
     bindsym $mod+c exec $browser
-
     bindsym $mod+q exec $file_browser
     bindsym $mod+Alt+s exec ~/.local/bin/screenshot
     floating_modifier $mod normal
 
+    exec swaync
+
+    bindsym $mod+Shift+n exec swaync-client -t -sw
+
+    bindsym $mod+bracketright gaps inner current plus 10px
+    bindsym $mod+bracketleft gaps inner current minus 10px
+
+    bindsym $mod+Shift+p exec ~/.local/bin/toggle_gfx
+
     bindsym $mod+Shift+c reload
 
+    # Gaps
     bindsym $mod+g gaps outer current set 0; gaps inner current set 0
-
     bindsym $mod+p gaps outer current set 4; gaps inner current set 4
 
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
