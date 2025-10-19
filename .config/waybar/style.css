@@ -43,7 +43,8 @@
 #pulseaudio,
 #custom-lock,
 #custom-gfx,
-#custom-power {
+#custom-power, 
+#custom-power_profile {
   background-color: @surface0;
   padding: 0.0rem 0.5rem;
   margin: 5px 0;
@@ -98,6 +99,10 @@
 }
 
 #custom-gfx {
+    color: @white;
+}
+
+#custom-power_profile {
     color: @white;
 }
 

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Get the active Tuned profile
+profile=$(tuned-adm active | awk -F': ' '{print $2}')
+profile="${profile^}"
+
+echo $profile

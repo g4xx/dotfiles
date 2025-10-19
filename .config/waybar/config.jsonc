@@ -5,7 +5,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces"],
     //"modules-center": ["custom/music"],
-    "modules-right": ["pulseaudio", "backlight", "battery", "custom/gfx", "clock", "tray", "custom/lock", "custom/power"],
+    "modules-right": ["pulseaudio", "backlight", "battery", "custom/gfx", "custom/power_profile", "clock", "tray", "custom/lock", "custom/power"],
     "sway/workspaces": {
 	 "all-outputs": true,
 //	 "persistent-workspaces": {
@@ -79,7 +79,11 @@
     "custom/gfx": {
         "toooltip": false,
         "exec": "supergfxctl -g",
-        "interval": 5,
+    },
+    "custom/power_profile": {
+        "toooltip": false,
+        "exec": "~/.local/bin/power_profile",
+        "interval": 60
     }
 }
 
