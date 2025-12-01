@@ -3,6 +3,10 @@ if [[ $(tty) == *"pts"* ]]; then
 else
     echo
     if [ -f /bin/hyprctl ]; then
-        echo "Start Sway with command Sway (not sure if this is true xD)"
+        echo "Start hyprctl"
     fi
+fi
+
+if [[ $(tty) == "/dev/tty3" ]]; then
+    gsteam
 fi
