@@ -3,11 +3,41 @@
 #
 # Image path supports environment variables and shell expansions,
 # e.g. image=$HOME/Pictures/default.png
-image=$HOME/.config/wallpaper/wallpaper.jpg
-scaling=fill
+# image=$HOME/.config/wallpaper/wallpaper.jpg
+# scaling=fill
 
 ignore-empty-password
 disable-caps-lock-text
+
+color=303046
+bs-hl-color=f5e0dc
+caps-lock-bs-hl-color=f5e0dc
+caps-lock-key-hl-color=a6e3a1
+inside-color=00000000
+inside-clear-color=00000000
+inside-caps-lock-color=00000000
+inside-ver-color=00000000
+inside-wrong-color=00000000
+key-hl-color=485066
+layout-bg-color=00000000
+layout-border-color=00000000
+layout-text-color=cdd6f4
+line-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+ring-color=b4befe
+ring-clear-color=f5e0dc
+ring-caps-lock-color=fab387
+ring-ver-color=89b4fa
+ring-wrong-color=eba0ac
+separator-color=00000000
+text-color=00000000
+text-clear-color=00000000
+text-caps-lock-color=00000000
+text-ver-color=00000000
+text-wrong-color=eba0ac
 
 #text-ver-color=00000000
 #text-wrong-color=00000000

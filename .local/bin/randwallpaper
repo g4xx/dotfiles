@@ -1,0 +1,23 @@
+#!/bin/sh
+# Changes the wallpaper to a randomly chosen image in the default directory (once)
+
+DEFAULT_DIRECTORY="/home/gaxx/Dokumenty/wallpapers"
+AWWW="/home/gaxx/.local/bin/awww"
+
+if [ ! -d "$DEFAULT_DIRECTORY" ]; then
+	printf "Directory not found: %s\n" "$DEFAULT_DIRECTORY"
+	exit 1
+fi
+
+# See awww-img(1)
+RESIZE_TYPE="stretch"
+export AWWW_TRANSITION_FPS="${AWWW_TRANSITION_FPS:-60}"
+export AWWW_TRANSITION_STEP="${AWWW_TRANSITION_STEP:-45}"
+
+img=$(find "$DEFAULT_DIRECTORY" -type f | shuf -n 1)
+
+[ -n "$img" ] || exit 1
+
+"$AWWW" img --resize="$RESIZE_TYPE" --transition-type random "$img"
+
+cp $img /home/gaxx/.config/wallpaper/wallpaper.jpg
