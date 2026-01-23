@@ -4,4 +4,7 @@ export ZSH="$HOME/.oh-my-zsh"
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
   PATH="$HOME/.local/bin:$HOME/bin:$HOME/.cargo/bin:$PATH"
 fi
+
+PATH="$HOME/.config/rofi/scripts:$PATH"
+
 export PATH

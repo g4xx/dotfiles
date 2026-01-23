@@ -1,6 +1,6 @@
-# Windows key as Mod Key
 include colors.conf
 
+# Windows key as Mod Key
 set $mod Mod4
 
 # Home row direction keys, like vim
@@ -11,13 +11,12 @@ set $right l
 
 set $file_browser nautilus
 set $term alacritty
-set $rofi_cmd rofi \
-        -terminal '$term'
-set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
+set $menu ~/.config/rofi/scripts/launcher_t1
+
 set $browser firefox
 
 # Outputs
-output * bg /home/gaxx/.config/wallpaper/wallpaper.jpg fill
+#output * bg /home/gaxx/.config/wallpaper/wallpaper.jpg fill
 
 exec_always --no-startup-id /home/gaxx/.local/bin/randwallpaper
 
@@ -67,12 +66,14 @@ input type:keyboard {
     bindsym $mod+Return exec $term
     bindsym $mod+Shift+q kill
     bindsym $mod+d exec $menu
+    bindsym $mod+s exec --no-startup-id ~/.local/bin/sway-outputs
     bindsym $mod+c exec $browser
     bindsym $mod+q exec $file_browser
     bindsym $mod+Alt+s exec ~/.local/bin/screenshot
     floating_modifier $mod normal
-
+    
     exec swaync
+    exec_always /home/gaxx/.cargo/bin/autotiling-rs
 
     bindsym $mod+Shift+n exec swaync-client -t -sw
 
@@ -177,6 +178,7 @@ for_window {
 	[app_id="nvidia-settings"] floating enable
 	[title="^Friends List$"] floating enable
 	[class="steam"] move to workspace 10, inhibit_idle fullscreen, border none
+	[app_id="@joplin/app-desktop"] inhibit_idle focus
 }
 
 # Gaps and Borders

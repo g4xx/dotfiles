@@ -1,0 +1,30 @@
+* {
+    font: "JetBrains Mono 13";
+    bg: #11111b;
+    fg: #cdd6f4;
+    accent: #89b4fa;
+}
+
+window {
+    location: center;
+    width: 700px;
+    border-radius: 14px;
+    padding: 20px;
+    background-color: @bg;
+}
+
+listview {
+    lines: 20;
+    spacing: 4px;
+    scrollbar: false;
+}
+
+element {
+    padding: 2px 6px;
+}
+
+element selected {
+    background-color: transparent;
+    text-color: @fg;
+}
+
