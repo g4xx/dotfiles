@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+outputs=$(swaymsg -t get_outputs -r | jq -r '.[].name')
+
+choice=$(echo "$outputs" | rofi \
+	-dmenu \
+	-p "Toggle output" \
+	-i \
+	-theme ~/.config/rofi/launchers/type-1/style-5.rasi)
+
+[ -z "$choice" ] && exit 0
+
+swaymsg output "$choice" toggle

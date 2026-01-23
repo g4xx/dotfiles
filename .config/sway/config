@@ -80,7 +80,6 @@ input type:keyboard {
     bindsym $mod+bracketright gaps inner current plus 10px
     bindsym $mod+bracketleft gaps inner current minus 10px
 
-    bindsym $mod+Shift+p exec ~/.local/bin/toggle_gfx
     bindsym $mod+Shift+w exec ~/.local/bin/randwallpaper
 
     bindsym $mod+Shift+c reload; exec systemctl --user restart awww.service
