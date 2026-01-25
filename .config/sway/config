@@ -19,6 +19,11 @@ set $browser firefox
 #output * bg /home/gaxx/.config/wallpaper/wallpaper.jpg fill
 
 exec_always --no-startup-id /home/gaxx/.local/bin/randwallpaper
+exec_always /home/gaxx/.cargo/bin/autotiling-rs
+exec nm-applet 
+exec swaync
+exec waybar
+exec blueman-applet
 
 set $laptop eDP-1
 set $hdmi HDMI-A-1
@@ -71,9 +76,13 @@ input type:keyboard {
     bindsym $mod+q exec $file_browser
     bindsym $mod+Alt+s exec ~/.local/bin/screenshot
     floating_modifier $mod normal
-    
-    exec swaync
-    exec_always /home/gaxx/.cargo/bin/autotiling-rs
+    bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+    bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+    bindsym XF86AudioRaiseVolume exec pamixer -i 5
+    bindsym XF86AudioLowerVolume exec pamixer -d 5
+    bindsym XF86AudioMute exec pamixer -t
+    bindsym XF86KbdBrightnessUp exec brightnessctl -d asus::kbd_backlight set +1
+    bindsym XF86KbdBrightnessDown exec brightnessctl -d asus::kbd_backlight set 1-
 
     bindsym $mod+Shift+n exec swaync-client -t -sw
 
@@ -178,6 +187,7 @@ for_window {
 	[title="^Friends List$"] floating enable
 	[class="steam"] move to workspace 10, inhibit_idle fullscreen, border none
 	[app_id="@joplin/app-desktop"] inhibit_idle focus
+	[app_id="looking-glass-client"] floating enable
 }
 
 # Gaps and Borders
@@ -213,4 +223,4 @@ bindsym $mod+r mode "resize"
 #client.urgent               #FFAEA4 #98000A #000000 #FFECE9 #FFAEA4
 #client.placeholder          #251D24 #181117 #FFFFFF #534551 #251D24
 
-include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
+#include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
