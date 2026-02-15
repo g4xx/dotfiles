@@ -1,7 +1,7 @@
 #!/bin/sh
 # Changes the wallpaper to a randomly chosen image in the default directory (once)
 
-DEFAULT_DIRECTORY="/home/gaxx/Dokumenty/wallpapers/images/"
+DEFAULT_DIRECTORY="/home/gaxx/Dokumenty/images/"
 AWWW="/home/gaxx/.local/bin/awww"
 
 if [ ! -d "$DEFAULT_DIRECTORY" ]; then

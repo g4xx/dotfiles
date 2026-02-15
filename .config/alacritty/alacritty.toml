@@ -9,3 +9,9 @@ family = "JetBrainsMono NF"
 
 [window]
 opacity = 0.9
+
+[selection]
+save_to_clipboard = true
+
+[terminal]
+osc52 = "OnlyCopy"

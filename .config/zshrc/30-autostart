@@ -1,11 +1,11 @@
-if [[ $(tty) == *"pts"* ]]; then
-    fastfetch --config examples/13
-else
-    echo
-    if [ -f /bin/hyprctl ]; then
-        echo "Start hyprctl"
-    fi
-fi
+#if [[ $(tty) == *"pts"* ]]; then
+#    fastfetch --config examples/13
+#else
+#    echo
+#    if [ -f /bin/hyprctl ]; then
+#        echo "Start hyprctl"
+#    fi
+#fi
 
 if [[ $(tty) == "/dev/tty3" ]]; then
     gsteam
