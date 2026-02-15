@@ -1,5 +1,5 @@
 # Import enviornemnt variables, not sure if CachyOS specific
-include /home/gaxx/.config/sway/config.d/*
+include /etc/sway/config.d/*
 
 # Import all configuration
-include /etc/sway/config.d/*
+include /home/gaxx/.config/sway/config.d/*
