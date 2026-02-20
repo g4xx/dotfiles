@@ -1,5 +1,8 @@
 # Import enviornemnt variables, not sure if CachyOS specific
 include /etc/sway/config.d/*
 
+# Include color scheme
+include /home/gaxx/.config/sway/catppuccin-mocha
+
 # Import all configuration
 include /home/gaxx/.config/sway/config.d/*
