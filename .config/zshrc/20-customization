@@ -3,7 +3,6 @@ plugins=(
 	sudo
 	web-search
 	zsh-autosuggestions
-	zsh-syntax-highlighting
 	fast-syntax-highlighting
 	copyfile
 	copybuffer
@@ -19,3 +18,20 @@ SAVEHIST=10000
 setopt appendhistory
 
 eval "$(starship init zsh)"
+
+bindkey -v
+export KEYTIMEOUT=1
+
+# Vi mode indicator — only show in NORMAL mode
+function zsh_mode_indicator() {
+    [[ $KEYMAP == vicmd ]] && echo "%F{red}-- NORMAL --%f"
+}
+
+# Set right prompt dynamically
+RPROMPT='$(zsh_mode_indicator)'
+
+# Optional: still keep zle hook so it updates immediately on mode change
+function zle-keymap-select {
+    zle reset-prompt
+}
+zle -N zle-keymap-select
