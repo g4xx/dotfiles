@@ -13,26 +13,25 @@ hl.window_rule({
 	no_focus = true,
 })
 
--- Layer rules also return a handle.
--- local overlayLayerRule = hl.layer_rule({
---     name  = "no-anim-overlay",
---     match = { namespace = "^my-overlay$" },
---     no_anim = true,
--- })
--- overlayLayerRule:set_enabled(false)
-
--- Hyprland-run windowrule
-hl.window_rule({
-	name = "move-hyprland-run",
-	match = { class = "hyprland-run" },
-
-	move = "20 monitor_h-120",
-	float = true,
-})
-
 hl.window_rule({
 	match = { class = "UnrealEditor", title = "^\\w*$" },
 	no_initial_focus = true,
 	no_anim = true,
-	min_size = { 400, 700 },
+	min_size = "400 700",
+})
+
+hl.window_rule({
+	name = "float-bluetooth",
+	match = { class = "^(blueman-manager)$" },
+	float = true,
+	size = "400 400",
+	center = true,
+})
+
+hl.window_rule({
+	name = "float-rider-welcome",
+	match = { class = "^(jetbrains-rider)$", title = "^(Welcome to JetBrains Rider)$" },
+	float = true,
+	size = "600 600",
+	center = true,
 })
