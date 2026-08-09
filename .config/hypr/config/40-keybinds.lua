@@ -2,16 +2,12 @@
 ---- KEYBINDINGS ----
 ---------------------
 
-mainMod = "SUPER" -- Sets "Windows" key as main modifier
+mainMod = "SUPER"
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + return", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
--- closeWindowBind:set_enabled(false)
--- hl.bind(
---	mainMod .. " + M",
---	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
---)
+
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + SHIFT + SPACE", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
@@ -19,9 +15,20 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(browser))
-hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(wallpaper))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("hyprctl reload"))
 
--- Move focus with mainMod + arrow keys
+-- Custom scripts
+hl.bind(
+	mainMod .. " + ALT + V",
+	hl.dsp.exec_cmd(
+		'cliphist list | rofi -theme "~/.config/rofi/launchers/type-1/style-5.rasi" -dmenu -i -p "Clipboard:" | cliphist decode | wl-copy'
+	)
+)
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("~/.local/bin/gpu-switcher"))
+hl.bind(mainMod .. " + ALT +  S", hl.dsp.exec_cmd("~/.local/bin/screenshot"))
+hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("~/.local/bin/randwallpaper"))
+
+-- Focus Windows
 hl.bind(mainMod .. " + " .. left, hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + " .. right, hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + " .. up, hl.dsp.focus({ direction = "up" }))
