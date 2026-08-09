@@ -1,0 +1,8 @@
+require("config/00-vars")
+require("config/05-env")
+require("config/10-input")
+require("config/20-output")
+require("config/30-appearance")
+require("config/40-keybinds")
+require("config/50-workspaces")
+require("config/60-autostart")
