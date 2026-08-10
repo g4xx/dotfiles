@@ -27,6 +27,7 @@ hl.bind(
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("~/.local/bin/gpu-switcher"))
 hl.bind(mainMod .. " + ALT +  S", hl.dsp.exec_cmd("~/.local/bin/screenshot"))
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("~/.local/bin/randwallpaper"))
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("~/.local/bin/hypr-outputs"))
 
 -- Focus Windows
 hl.bind(mainMod .. " + " .. left, hl.dsp.focus({ direction = "left" }))
@@ -49,8 +50,8 @@ for i = 1, 10 do
 end
 
 -- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+-- hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
+-- hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))

@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Requires: jq, rofi
+
+mapfile -t outputs < <(hyprctl monitors all -j | jq -r '.[].name')
+
+choice=$(printf '%s\n' "${outputs[@]}" | rofi \
+	-dmenu \
+	-p "Toggle output" \
+	-i \
+	-theme ~/.config/rofi/launchers/type-1/style-5.rasi)
+[ -z "$choice" ] && exit 0
+
+is_disabled=$(hyprctl monitors all -j | jq -r --arg name "$choice" \
+	'.[] | select(.name == $name) | .disabled')
+
+if [ "$is_disabled" = "true" ]; then
+	hyprctl eval "hl.monitor({ output = \"$choice\", mode = \"preferred\", position = \"auto\", scale = 1, disabled = false })"
+else
+	hyprctl eval "hl.monitor({ output = \"$choice\", disabled = true })"
+fi
