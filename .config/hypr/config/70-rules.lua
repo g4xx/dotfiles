@@ -35,3 +35,25 @@ hl.window_rule({
 	size = "600 600",
 	center = true,
 })
+
+-- hl.window_rule({
+-- 	name = "bitwarden-login",
+-- 	match = {
+-- 		class = "^(firefox)$",
+-- 		title = ".*Bitwarden Password Manager.*",
+-- 	},
+-- 	float = true,
+-- 	size = "800 600",
+-- 	center = true,
+-- })
+
+hl.window_rule({
+	name = "pulseaudio-volume-control",
+	match = {
+		class = "^(org.pulseaudio.pavucontrol)$",
+		title = "^(Volume Control)$",
+	},
+	float = true,
+	size = "600 400",
+	center = true,
+})
